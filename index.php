@@ -4,9 +4,6 @@ $numCharacters = $_GET['number'] ;
 var_dump($numCharacters);
 
 function generateCasualPassword($numCharacters){
-    // for ($i = 1; $i <= $numCharacters; $i++) { 
-    //     var_dump('la funzione è andata');
-    // }
     
     // Array of letters, numbers and special symbols
     $lowercaseAlphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -21,9 +18,12 @@ function generateCasualPassword($numCharacters){
     shuffle($casualArray);
     
     // Estraggo $numCharacters dall'array 
-    $randomPassword = array_slice($casualArray, 0, $numCharacters);
+    $randomCharacters = array_slice($casualArray, 0, $numCharacters);
 
-    var_dump($randomPassword) ;
+    $randomPassword = implode($randomCharacters);
+
+
+    echo $randomPassword;
 }
 
 
