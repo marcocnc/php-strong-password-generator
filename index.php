@@ -1,9 +1,9 @@
 <?php
 
 $numCharacters = $_GET['number'] ;
-var_dump($numCharacters);
 
 require_once __DIR__ . '/partials/functions.php';
+
 
 
 ?>
@@ -27,13 +27,13 @@ require_once __DIR__ . '/partials/functions.php';
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Password Generator</h1>
-        <form action="index.php" method="GET">
+
+        <form action="password-page.php" method="GET">
             <div class="mb-3 d-flex flex-column justify-content-center text-center">
                 <label for="number" class="form-label">Scegli tu la lunghezza della tua password!</label>
-                <input type="number" min="1" class="form-control" id="password" aria-describedby="emailHelp" name="number" placeholder="Inserisci numero">
+                <input type="number" min="0" class="form-control" id="password" aria-describedby="emailHelp" name="number" placeholder="Inserisci numero">
             </div>
 
-            <p><?php generateCasualPassword($numCharacters) ?></p>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
